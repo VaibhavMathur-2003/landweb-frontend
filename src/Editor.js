@@ -46,7 +46,7 @@ const Editor = () => {
                 aria-controls="block"
                 aria-selected="true"
               >
-                <i className="fa fa-cubes"></i>
+                <i className="fa fa-plus"></i>
               </button>
             </li>
             {/* <li className="nav-item" role="presentation">
@@ -66,20 +66,6 @@ const Editor = () => {
             <li className="nav-item" role="presentation">
               <button
                 className="nav-link"
-                id="style-tab"
-                data-bs-toggle="tab"
-                data-bs-target="#style"
-                type="button"
-                role="tab"
-                aria-controls="style"
-                aria-selected="false"
-              >
-                <i className="fa fa-paint-brush"></i>
-              </button>
-            </li>
-            <li className="nav-item" role="presentation">
-              <button
-                className="nav-link"
                 id="trait-tab"
                 data-bs-toggle="tab"
                 data-bs-target="#trait"
@@ -89,6 +75,20 @@ const Editor = () => {
                 aria-selected="false"
               >
                 <i className="fa fa-cog"></i>
+              </button>
+            </li>
+            <li className="nav-item" role="presentation">
+              <button
+                className="nav-link"
+                id="style-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#style"
+                type="button"
+                role="tab"
+                aria-controls="style"
+                aria-selected="false"
+              >
+                <i className="fa fa-paint-brush"></i>
               </button>
             </li>
           </ul>

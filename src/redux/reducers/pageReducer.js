@@ -8,6 +8,10 @@ const {
   CREATE_PAGE_REQUEST,
   CREATE_PAGE_ERROR,
   CREATE_PAGE_SUCCESS,
+
+  DELETE_PAGE_REQUEST,
+  DELETE_PAGE_ERROR,
+  DELETE_PAGE_SUCCESS,
 } = TYPES;
 
 const initialState = {
@@ -41,7 +45,24 @@ const pageReducer = (state = initialState, action) => {
         createPageLoading: false,
       };
     case CREATE_PAGE_SUCCESS:
-      return { ...state, createPageError: "", createPageLoading: false,  pages: [...state.pages, action.data]};
+      return {
+        ...state,
+        createPageError: "",
+        createPageLoading: false,
+        pages: [...state.pages, action.data],
+      };
+
+    case DELETE_PAGE_REQUEST:
+      return { ...state }; // You can add loading state for delete if needed
+    case DELETE_PAGE_ERROR:
+      return { ...state }; // You can add error handling for delete if needed
+    case DELETE_PAGE_SUCCESS:
+      // Filter out the deleted page from the state
+      const updatedPages = state.pages.filter(page => page._id !== action.pageId);
+      return {
+        ...state,
+        pages: updatedPages,
+      };
 
     default:
       return state;
@@ -49,4 +70,3 @@ const pageReducer = (state = initialState, action) => {
 };
 
 export default pageReducer;
-
