@@ -445,7 +445,7 @@ export const panels = {
         // },
         {
           id: "visibility",
-          active: true, // active by default
+          active: false, // active by default
           className: "btn-toggle-borders",
           label: '<i class="fa fa-clone"></i>',
           command: "sw-visibility", // Built-in command

@@ -57,6 +57,8 @@ html {
     .container-fluid {
       padding: 0;
     }
+    background-color: #373D49;
+    ;
   }
 
   #editor {
@@ -83,12 +85,17 @@ html {
 
 #block {
   height: 100%;
+  font-weight: 700;
+  background-color: #373D49;
+
+
   #blocks {
     height: 100%;
 
     .gjs-blocks-c {
       align-items: center;
       justify-content: center;
+      
     }
     .gjs-block {
       justify-content: center;
@@ -97,12 +104,22 @@ html {
 }
 
 /* Theming */
-.gjs-one-bg {
-  background-color: #fcf6f5ff;
-}
+// .gjs-one-bg {
+//   background-color: #fcf6f5ff;
+// }
 
 .gjs-two-color {
-  color: rgb(24, 97, 199);
+  color: #4df1d5;
+}
+
+.gjs-pn-btn{
+  margin: 0px 4px;
+
+}
+.gjs-pn-btn:hover {
+  color: #e5ff00;
+  box-shadow: 0 0 30px rgba(207, 203, 203, 0.3);
+
 }
 
 .gjs-three-bg {
@@ -112,12 +129,11 @@ html {
 
 .gjs-four-color,
 .gjs-four-color-h:hover {
-  color: rgb(24, 97, 199);
+  border: 2px solid rgb(230, 218, 218);
+  color: #e5ff00;
+  box-shadow: 0 0 30px rgba(207, 203, 203, 0.3); /* Add box shadow */
 }
 
-.gjs-pn-btn {
-  border: 1px solid rgb(24, 97, 199);
-}
 
 // Customize Bootstrap CSS
 
@@ -126,15 +142,23 @@ html {
 .modal-content,
 .form-control {
   border-radius: 0 !important;
+  color: #35D7BB
+
+}
+
+.nav-link:hover{
+  color: #35D7BB
+
 }
 
 .btn {
   .fa {
-    color: rgb(24, 97, 199);
+    color: #35D7BB;
   }
   &:hover {
     .fa {
-      color: #fcf6f5ff;
+      color: #35D7BB
+
     }
   }
 }
@@ -188,6 +212,7 @@ html {
   margin-top: 1rem;
 }
 .gjs-block-label {
+  font-size: 12px;
   .fa {
     font-size: 25px;
   }
@@ -261,4 +286,8 @@ html {
 .grp-handler-cp-wrap input[type="color"] {
   opacity: 0;
   cursor: pointer;
+}
+
+#navbar {
+  background-color: #373D49;
 }
