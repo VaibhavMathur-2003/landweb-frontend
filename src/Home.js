@@ -12,7 +12,6 @@ const Home = () => {
 
   const handleCreatePage = ({ name, description }) => {
     createPage(name)(dispatch);
-    // Handle description as needed
     setIsModalOpen(false);
   };
 
@@ -69,6 +68,9 @@ const Home = () => {
                           Delete
                         </button>
                       </div>
+                      <button className="text-center bg-blue-600 text-white rounded-lg p-1 mt-3 w-full">
+                      React Code
+                      </button>
                     </div>
                   ))
                 ) : (
