@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import geditorConfig from "./api_utils/geditor_config";
+import geditorConfig from "./apiUtils/geditor_config";
 
 const Editor = () => {
   const [editor, setEditor] = useState(null);

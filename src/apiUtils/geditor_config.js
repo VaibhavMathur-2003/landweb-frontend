@@ -1,9 +1,9 @@
 import grapesjs from "grapesjs";
 import gjsBlockBasic from "grapesjs-blocks-basic";
 import $ from "jquery";
-import tailwindComponent from "../plugins/tailwind";
-import swiperComponent from "../plugins/swiper";
-import {navbar1, navbar2} from "../plugins/navbar/index.js"
+import tailwindComponent from "../plugins/tailwind/index.js";
+// import swiperComponent from "../plugins/swiper/index.js";
+import {navbars1, navbars2} from "../plugins/navbar/index.js"
 
 import {
   addEditorCommand,
@@ -16,7 +16,9 @@ import {
   styleManager,
   styles,
   traitManager,
-} from "./geditor_utils";
+} from "./geditor_utils.js";
+import { centerDiv1, centerHorizontalDiv1, leftdiv1, rightdiv1, centerVerticalDiv1 } from "../plugins/divs/index.js";
+
 
 const geditorConfig = (assets, pageId) => {
   $(".panel__devices").html("");
@@ -50,16 +52,26 @@ const geditorConfig = (assets, pageId) => {
     },
     plugins: [
       tailwindComponent,
-      navbar1,
-      navbar2,
+      navbars1,
+      navbars2,
+      leftdiv1,
+      centerDiv1,
+      rightdiv1,
+      centerHorizontalDiv1,
+      centerVerticalDiv1,
       gjsBlockBasic,
       // swiperComponent,
       // chartLibComponent,
     ],
     pluginsOpts: {
       tailwindComponent: {},
-      navbar2: {},
-      navbar1:{},
+      navbars2: {},
+      navbars1:{},
+      leftdiv: {},
+      centerDiv: {},
+      rightdiv: {},
+      centerHorizontalDiv: {},
+      centerVerticalDiv: {},
       gjsBlockBasic: {},
       // swiperComponent: {},
       // chartLibComponent: {},

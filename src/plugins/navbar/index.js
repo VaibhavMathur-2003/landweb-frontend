@@ -1,29 +1,11 @@
 import grapesjs from "grapesjs";
-import { nav1, nav2 } from "./blocks";
+import { addPlugin } from "../../pluginUtils/add";
+import {navbar1, navbar2} from "./navbars.js"
 
-export const navbar1 = grapesjs.plugins.add("nav1", (editor, opts = {}) => {
-  let options = {
-    label: "Navbar 1",
-    name: "cnavbar2",
-    category: "Navbar",
-  };
-  for (let name in options) {
-    if (!(name in opts)) opts[name] = options[name];
-  }
-  nav1(editor, options);
-  
+export const navbars1 = grapesjs.plugins.add("Navbar1", (editor, opts = {}) => {
+  addPlugin(editor, opts, "Navbar 1", "cNavbar1", "Navbar", navbar1);
 });
 
-export const navbar2 = grapesjs.plugins.add("nav2", (editor, opts = {}) => {
-  let options = {
-    label: "Navbar 2",
-    name: "cnavbar",
-    category: "Navbar",
-  };
-  for (let name in options) {
-    if (!(name in opts)) opts[name] = options[name];
-  }
-  nav2(editor, options);
-  
+export const navbars2 = grapesjs.plugins.add("Navbar2", (editor, opts = {}) => {
+  addPlugin(editor, opts, "Navbar 2", "cNavbar2", "Navbar", navbar2);
 });
-
