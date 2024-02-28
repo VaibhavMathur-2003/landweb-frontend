@@ -3,7 +3,7 @@ import gjsBlockBasic from "grapesjs-blocks-basic";
 import $ from "jquery";
 import tailwindComponent from "../plugins/tailwind/index.js";
 // import swiperComponent from "../plugins/swiper/index.js";
-import {navbars1, navbars2} from "../plugins/navbar/index.js"
+import {navbars1, navbars2, navbars3, navbars4} from "../plugins/navbar/index.js"
 
 import {
   addEditorCommand,
@@ -54,6 +54,8 @@ const geditorConfig = (assets, pageId) => {
       tailwindComponent,
       navbars1,
       navbars2,
+      navbars3,
+      navbars4,
       leftdiv1,
       centerDiv1,
       rightdiv1,
@@ -67,6 +69,8 @@ const geditorConfig = (assets, pageId) => {
       tailwindComponent: {},
       navbars2: {},
       navbars1:{},
+      navbars3:{},
+      navbars4:{},
       leftdiv: {},
       centerDiv: {},
       rightdiv: {},
