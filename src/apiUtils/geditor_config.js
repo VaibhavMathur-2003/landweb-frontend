@@ -18,6 +18,7 @@ import {
   traitManager,
 } from "./geditor_utils.js";
 import { centerDiv1, centerHorizontalDiv1, leftdiv1, rightdiv1, centerVerticalDiv1 } from "../plugins/divs/index.js";
+import { Card1, Card2, Card3, Card4, Card5, Card6 } from "../plugins/Cards/index.js";
 
 
 const geditorConfig = (assets, pageId) => {
@@ -56,6 +57,12 @@ const geditorConfig = (assets, pageId) => {
       navbars2,
       navbars3,
       navbars4,
+      Card1,
+      Card2,
+      Card3,
+      Card4,
+      Card5,
+      Card6,
       leftdiv1,
       centerDiv1,
       rightdiv1,
