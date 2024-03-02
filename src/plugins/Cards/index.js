@@ -1,5 +1,5 @@
 import grapesjs from "grapesjs";
-import {card1, card2, card3, card4, card5, card6 } from "./cards";
+import {card1, card2, card3, card4, card5, card6, card7 } from "./cards";
 import { addPlugin } from "../../pluginUtils/add";
 
 
@@ -28,4 +28,8 @@ export const Card2 = grapesjs.plugins.add("Card2", (editor, opts = {}) => {
 
   export const Card6 = grapesjs.plugins.add("Card6", (editor, opts = {}) => {
     addPlugin(editor, opts, "Card 6", "cCard6", "Card", card6);
+  });
+
+  export const Card7 = grapesjs.plugins.add("Card7", (editor, opts = {}) => {
+    addPlugin(editor, opts, "Toast", "cCard7", "Card", card7);
   });

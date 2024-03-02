@@ -18,7 +18,10 @@ import {
   traitManager,
 } from "./geditor_utils.js";
 import { centerDiv1, centerHorizontalDiv1, leftdiv1, rightdiv1, centerVerticalDiv1 } from "../plugins/divs/index.js";
-import { Card1, Card2, Card3, Card4, Card5, Card6 } from "../plugins/Cards/index.js";
+import { Card1, Card2, Card3, Card4, Card5, Card6, Card7 } from "../plugins/Cards/index.js";
+import { Bottombar1, Bottombar2, Bottombar3, Bottombar4 } from "../plugins/BottomBars/index.js";
+import { Button1, Button2, Button3, Button4 } from "../plugins/Buttons/index.js";
+import { Table1, Table2, Table3 } from "../plugins/Tables/index.js";
 
 
 const geditorConfig = (assets, pageId) => {
@@ -63,6 +66,18 @@ const geditorConfig = (assets, pageId) => {
       Card4,
       Card5,
       Card6,
+      Card7,
+      Bottombar1,
+      Bottombar2,
+      Bottombar3,
+      Bottombar4,
+      Button1,
+      Button2,
+      Button3,
+      Button4,
+      Table1,
+      Table2,
+      Table3,
       leftdiv1,
       centerDiv1,
       rightdiv1,
