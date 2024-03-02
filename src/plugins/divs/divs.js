@@ -80,33 +80,26 @@ export const rightdiv = {
 
 export const centerDiv = {
   content: `
-    <div class="gjs-row">
-  <div class="gjs-cell">
-  </div>
+  <div class="divr">
+  <div></div>
 </div>
 `,
   style: `<style>
-    .gjs-row {
-      display: table;
-      padding: 10px;
-      width: 100%;
-    }
-    
-    .gjs-cell {
-      width: 8%;
-      display: table-cell;
-      height: 75px;
-      text-align: center; /* Center content horizontally */
-    }
-    
-    @media (max-width: 768px) {
-      .gjs-cell {
-        width: 100%;
-        display: block;
-        text-align: center; /* Center content horizontally */
-      }
-    }
-    
+  .divr {
+    display: table;
+    padding: 10px;
+    width: 100%;
+    text-align: center; /* Center the content horizontally */
+    vertical-align: middle; /* Center the content vertically */
+  }
+  
+  .divc {
+    width: 100%;
+    display: table-cell;
+    height: 75px;
+    text-align: center; /* Center the content horizontally */
+    vertical-align: middle; /* Center the content vertically */
+  }
       </style>`,
   label: `<i class="fa fa-arrows-h"></i>`,
 };
