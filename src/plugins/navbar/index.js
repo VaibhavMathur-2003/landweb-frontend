@@ -2,6 +2,7 @@ import grapesjs from "grapesjs";
 import { addPlugin } from "../../pluginUtils/add";
 import {navbar1, navbar2, navbar3, navbar4} from "./navbars.js"
 
+
 export const navbars1 = grapesjs.plugins.add("Navbar1", (editor, opts = {}) => {
   addPlugin(editor, opts, "MUI", "cNavbar1", "Navbar", navbar1);
 });

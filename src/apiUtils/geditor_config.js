@@ -2,7 +2,6 @@ import grapesjs from "grapesjs";
 import gjsBlockBasic from "grapesjs-blocks-basic";
 import $ from "jquery";
 import tailwindComponent from "../plugins/tailwind/index.js";
-// import swiperComponent from "../plugins/swiper/index.js";
 import {navbars1, navbars2, navbars3, navbars4} from "../plugins/navbar/index.js"
 
 import {
