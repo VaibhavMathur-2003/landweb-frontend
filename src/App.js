@@ -5,6 +5,8 @@ import Home from "./Home";
 import Editor from "./Editor";
 import "./App.scss"
 import { pageLoad } from "./redux/actions/pageAction";
+import SignIn from "./Auth/SignIn";
+import SignUp from "./Auth/SignUp";
 
 function App() {
   const dispatch = useDispatch();
@@ -18,6 +20,8 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home}></Route>
         <Route exact path="/editor/:pageId" component={Editor}></Route>
+        <Route path="/signin" component={SignIn} />
+          <Route path="/signup" component={SignUp} />
       </Switch>
     </Router>
   );
