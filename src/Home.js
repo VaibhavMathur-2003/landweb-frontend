@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { createPage, deletePage } from "./redux/actions/pageAction";
 import Popup from "./Popup";
+import { useLogout } from "./Context/useLogout";
 
 const Home = () => {
+  const {logout} = useLogout()
   const [isModalOpen, setIsModalOpen] = useState(false);
   const dispatch = useDispatch();
   const { pageStore } = useSelector((state) => state);
@@ -30,6 +32,11 @@ const Home = () => {
             <Link to="/" className="hover:text-white">
               Create your website in minutes.
             </Link>
+          </li>
+          <li className="mb-2">
+            <button onClick={()=>logout()} className="hover:text-white">
+              Logout
+            </button>
           </li>
         </ul>
       </div>
