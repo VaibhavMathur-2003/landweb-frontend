@@ -8,7 +8,7 @@ import { useAuthContext } from "./Context/useAuthContext";
 
 const Home = () => {
   const user = useAuthContext();
-  const {logout} = useLogout();
+  const { logout } = useLogout();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const dispatch = useDispatch();
   const { pageStore } = useSelector((state) => state);
@@ -27,28 +27,33 @@ const Home = () => {
 
   return (
     <div className="flex flex-col md:flex-row h-screen">
-      <div className="w-full md:w-64 bg-gradient-to-b from-blue-700 to-indigo-900 text-white px-4 py-6">
+      <div className="w-full md:w-64 bg-gradient-to-b from-blue-700 to-indigo-900 text-white px-4 py-6 rounded-sm">
         <h2 className="text-2xl font-bold mb-4">Land Web</h2>
-        <ul>
-          <li className="mb-2">
-            <Link to="/" className="hover:text-white">
-              Create your website in minutes.
+        <ul className="space-y-2">
+          <li>
+            <Link
+              to="/"
+              className="block hover:text-blue-300 transition duration-300 ease-in-out"
+            >
+              Create your website in minutes
             </Link>
           </li>
-          <li className="mb-2">
-            <Link to="/signin" className="hover:text-white">
-            <button onClick={()=>logout()} className="hover:text-white">
+          <li>
+            <button
+              onClick={() => logout()}
+              className="block text-red-500 hover:text-blue-300 transition duration-300 ease-in-out"
+            >
               Logout
             </button>
-            </Link>
           </li>
         </ul>
       </div>
+
       <div className="flex-1 p-4 bg-gray-100 overflow-x-auto">
         <div className="max-w-3xl mx-auto">
           <div className="flex justify-end mb-4">
             <button
-              className="flex items-center py-2 px-4 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+              className="flex items-center py-2 px-4 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-300 ease-in-out"
               onClick={() => setIsModalOpen(true)}
             >
               <span className="text-2xl mr-2">+</span>
@@ -58,12 +63,19 @@ const Home = () => {
           {/* Pages Section */}
           <div className="bg-white rounded-lg shadow-md overflow-x-auto">
             <div className="p-8">
-              <h5 className="text-3xl font-bold text-blue-700 mb-4">Web Pages</h5>
+              <h5 className="text-3xl font-bold text-blue-700 mb-4">
+                Web Pages
+              </h5>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {pages && pages.length > 0 ? (
                   pages.map((page) => (
-                    <div key={page._id} className="bg-gray-100 p-4 rounded-md">
-                      <h6 className="text-lg font-semibold mb-2">{page.name}</h6>
+                    <div
+                      key={page._id}
+                      className="bg-gray-100 p-4 rounded-md hover:shadow-2xl transition duration-200 ease-in-out"
+                    >
+                      <h6 className="text-lg font-semibold mb-2">
+                        {page.name}
+                      </h6>
                       <p className="text-gray-700 mb-4">{page.slug}</p>
                       <div className="flex justify-between">
                         <Link
@@ -79,8 +91,8 @@ const Home = () => {
                           Delete
                         </button>
                       </div>
-                      <button className="text-center bg-blue-600 text-white rounded-lg p-1 mt-3 w-full">
-                      React Code
+                      <button className="text-center bg-blue-600 text-white rounded-lg p-1 mt-3 w-full hover:bg-blue-700 transition duration-300 ease-in-out">
+                        React Code
                       </button>
                     </div>
                   ))
