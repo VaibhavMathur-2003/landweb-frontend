@@ -1,28 +1,48 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Navigate,
+  Routes,
+} from "react-router-dom";
 import { useDispatch } from "react-redux";
 import Home from "./Home";
 import Editor from "./Editor";
-import "./App.scss"
+import "./App.scss";
 import { pageLoad } from "./redux/actions/pageAction";
 import SignIn from "./Auth/SignIn";
 import SignUp from "./Auth/SignUp";
+import { useAuthContext } from "./Context/useAuthContext";
 
 function App() {
   const dispatch = useDispatch();
+  const user = useAuthContext();
 
   useEffect(() => {
-    pageLoad()(dispatch);
-  }, [dispatch]);
+    pageLoad(user)(dispatch);
+  }, [dispatch, user]);
 
+  const x = localStorage.getItem("user");
   return (
     <Router>
-      <Switch>
-        <Route exact path="/" component={Home}></Route>
-        <Route exact path="/editor/:pageId" component={Editor}></Route>
-        <Route path="/signin" component={SignIn} />
-          <Route path="/signup" component={SignUp} />
-      </Switch>
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={x ? <Home /> : <Navigate to="/signin" />}
+        />
+        <Route exact path="/editor/:pageId" element={<Editor />} />
+        <Route
+          exact
+          path="/signin"
+          element={!x ? <SignIn /> : <Navigate to="/" />}
+        />
+        <Route
+          exact
+          path="/signup"
+          element={!x ? <SignUp /> : <Navigate to="/" />}
+        />
+      </Routes>
     </Router>
   );
 }

@@ -4,22 +4,24 @@ import { useSelector, useDispatch } from "react-redux";
 import { createPage, deletePage } from "./redux/actions/pageAction";
 import Popup from "./Popup";
 import { useLogout } from "./Context/useLogout";
+import { useAuthContext } from "./Context/useAuthContext";
 
 const Home = () => {
-  const {logout} = useLogout()
+  const user = useAuthContext();
+  const {logout} = useLogout();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const dispatch = useDispatch();
   const { pageStore } = useSelector((state) => state);
   const { pages } = pageStore;
 
   const handleCreatePage = ({ name, description }) => {
-    createPage(name)(dispatch);
+    createPage(name, user)(dispatch);
     setIsModalOpen(false);
   };
 
   const handleDeletePage = (pageId) => {
     if (window.confirm("Are you sure you want to delete this page?")) {
-      dispatch(deletePage(pageId));
+      dispatch(deletePage(pageId, user));
     }
   };
 
@@ -34,9 +36,11 @@ const Home = () => {
             </Link>
           </li>
           <li className="mb-2">
+            <Link to="/signin" className="hover:text-white">
             <button onClick={()=>logout()} className="hover:text-white">
               Logout
             </button>
+            </Link>
           </li>
         </ul>
       </div>
