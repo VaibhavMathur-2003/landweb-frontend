@@ -14,10 +14,10 @@ export const addBlock = (editor, opts, navbar) => {
   };
 
 
-export const addPlugin = (editor, opts = {}, label, name, category, divFunction) => {
+export const addPlugin = (editor, opts = {}, label, category, divFunction) => {
     let options = {
       label: label,
-      name: name,
+      name: label,
       category: category,
     };
     for (let name in options) {

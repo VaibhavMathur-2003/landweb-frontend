@@ -600,10 +600,11 @@ export const scripts = [
   // "https://unpkg.com/swiper@7/swiper-bundle.min.js",
   "https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js",
   "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js",
-  // "https://unpkg.com/@mui/material@5.15.11/umd/material-ui.development.js",
+  // "https://cdn.jsdelivr.net/npm/shadcn-ui@0.8.0/dist/index.min.js",
+  // "https://cdn.tailwindcss.com",
+
 ];
 export const styles = [
-  // "https://unpkg.com/@mui/material@5.15.11/umd/material-ui.production.min.js",
   "https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css",
   // "https://unpkg.com/swiper@7/swiper-bundle.min.css",
   "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css",

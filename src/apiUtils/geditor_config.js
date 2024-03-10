@@ -2,7 +2,6 @@ import grapesjs from "grapesjs";
 import gjsBlockBasic from "grapesjs-blocks-basic";
 import $ from "jquery";
 import tailwindComponent from "../plugins/tailwind/index.js";
-import {navbars1, navbars2, navbars3, navbars4} from "../plugins/navbar/index.js"
 
 import {
   addEditorCommand,
@@ -17,10 +16,13 @@ import {
   traitManager,
 } from "./geditor_utils.js";
 import { centerDiv1, centerHorizontalDiv1, leftdiv1, rightdiv1, centerVerticalDiv1 } from "../plugins/divs/index.js";
-import { Card1, Card2, Card3, Card4, Card5, Card6, Card7 } from "../plugins/Cards/index.js";
-import { Bottombar1, Bottombar2, Bottombar3, Bottombar4 } from "../plugins/BottomBars/index.js";
+import { Navbars1, card1, card2, card3, card4, Bottombar1, Bottombar2, Footers1, Footers2, Jumbotrons1, Jumbotrons2, Navbars2 } from "../plugins/TailwindComp/Index.js";
+// import { Bottombar1, Bottombar2, Bottombar3, Bottombar4 } from "../plugins/BottomBars/index.js";
 import { Button1, Button2, Button3, Button4 } from "../plugins/Buttons/index.js";
 import { Table1, Table2, Table3 } from "../plugins/Tables/index.js";
+import reactComponents from "../react-components.js";
+import baseReactComponent from "../base-react-component.js";
+import MuiComponents from "../plugins/mui-components"
 
 
 const geditorConfig = (assets, pageId) => {
@@ -55,21 +57,24 @@ const geditorConfig = (assets, pageId) => {
     },
     plugins: [
       tailwindComponent,
-      navbars1,
-      navbars2,
-      navbars3,
-      navbars4,
-      Card1,
-      Card2,
-      Card3,
-      Card4,
-      Card5,
-      Card6,
-      Card7,
+      Navbars1,
+      Navbars2,
+      card1,
+      card2,
+      // card3,
+      // card4,
+      baseReactComponent,
+      reactComponents,
+      MuiComponents,
       Bottombar1,
       Bottombar2,
-      Bottombar3,
-      Bottombar4,
+
+      // Bottombar3,
+      // Bottombar4,
+      Footers1,
+      Footers2,
+      Jumbotrons1,
+      Jumbotrons2,
       Button1,
       Button2,
       Button3,
