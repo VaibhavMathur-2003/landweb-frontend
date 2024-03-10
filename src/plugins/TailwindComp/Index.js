@@ -13,6 +13,8 @@ import {
   Jumbotron1,
   Jumbotron2,
   Navbar2,
+  Sidebar1,
+  Sidebar2,
 } from "./TailwindComp";
 
 export const Navbars1 = grapesjs.plugins.add("Navbar1", (editor, opts = {}) => {
@@ -74,3 +76,19 @@ export const Jumbotrons2 = grapesjs.plugins.add(
     addPlugin(editor, opts, "Jumbotron 2", "Tailwind", Jumbotron2);
   }
 );
+
+export const Sidebars1 = grapesjs.plugins.add(
+    "Sidebar1",
+    (editor, opts = {}) => {
+      addPlugin(editor, opts, "Sidebar 1", "Tailwind", Sidebar1);
+    }
+  );
+
+
+  export const Sidebars2 = grapesjs.plugins.add(
+    "Sidebar2",
+    (editor, opts = {}) => {
+      addPlugin(editor, opts, "Sidebar 2", "Tailwind", Sidebar2);
+    }
+  );
+

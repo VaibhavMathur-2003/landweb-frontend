@@ -15,14 +15,13 @@ import {
   styles,
   traitManager,
 } from "./geditor_utils.js";
-import { centerDiv1, centerHorizontalDiv1, leftdiv1, rightdiv1, centerVerticalDiv1 } from "../plugins/divs/index.js";
-import { Navbars1, card1, card2, card3, card4, Bottombar1, Bottombar2, Footers1, Footers2, Jumbotrons1, Jumbotrons2, Navbars2 } from "../plugins/TailwindComp/Index.js";
+import { Navbars1, card1, card2, card3, card4, Bottombar1, Bottombar2, Footers1, Footers2, Jumbotrons1, Jumbotrons2, Navbars2, Sidebars1, Sidebars2 } from "../plugins/TailwindComp/Index.js";
 // import { Bottombar1, Bottombar2, Bottombar3, Bottombar4 } from "../plugins/BottomBars/index.js";
 import { Button1, Button2, Button3, Button4 } from "../plugins/Buttons/index.js";
 import { Table1, Table2, Table3 } from "../plugins/Tables/index.js";
-import reactComponents from "../react-components.js";
-import baseReactComponent from "../base-react-component.js";
-import MuiComponents from "../plugins/mui-components"
+// import reactComponents from "../react-components.js";
+// import baseReactComponent from "../base-react-component.js";
+// import MuiComponents from "../plugins/mui-components"
 
 
 const geditorConfig = (assets, pageId) => {
@@ -63,9 +62,9 @@ const geditorConfig = (assets, pageId) => {
       card2,
       // card3,
       // card4,
-      baseReactComponent,
-      reactComponents,
-      MuiComponents,
+      // baseReactComponent,
+      // reactComponents,
+      // MuiComponents,
       Bottombar1,
       Bottombar2,
 
@@ -75,6 +74,8 @@ const geditorConfig = (assets, pageId) => {
       Footers2,
       Jumbotrons1,
       Jumbotrons2,
+      Sidebars1,
+      Sidebars2,
       Button1,
       Button2,
       Button3,
@@ -82,11 +83,6 @@ const geditorConfig = (assets, pageId) => {
       Table1,
       Table2,
       Table3,
-      leftdiv1,
-      centerDiv1,
-      rightdiv1,
-      centerHorizontalDiv1,
-      centerVerticalDiv1,
       gjsBlockBasic,
       // swiperComponent,
       // chartLibComponent,
