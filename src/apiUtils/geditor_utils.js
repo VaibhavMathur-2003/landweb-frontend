@@ -435,8 +435,9 @@ export const panels = {
         // },
         {
           id: "preview",
-          className: "fa fa-eye",
+          className: "font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out",
           command: "preview",
+          label: '<button>Preview</button>'
         },
         // {
         //   id: "code",
@@ -459,8 +460,10 @@ export const panels = {
       buttons: [
         {
           id: "saveDb",
-          className: "fa fa-check-square-o btn-save",
+          className: "font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out btn-save",
           command: "saveDb",
+          label: '<button>Save</button>'
+
         },
         // {
         //   id: "cmd-clear",
@@ -489,8 +492,10 @@ export const panels = {
         // },
         {
           id: "code",
-          className: "fa fa-code",
+          className: "font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out",
           command: "code",
+          label: '<button>Code</button>'
+
         },
       ],
     },
