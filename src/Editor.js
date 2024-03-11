@@ -29,7 +29,6 @@ const Editor = () => {
   }, [pageId, assets]);
   return (
     <div className="App">
-      <div className="flex">
         <div
           id="navbar"
           className="sidenav d-flex flex-column overflow-scroll position-fixed"
@@ -174,7 +173,6 @@ const Editor = () => {
           </nav>
           <div id="editor"></div>
         </div>
-      </div>
     </div>
   );
 };

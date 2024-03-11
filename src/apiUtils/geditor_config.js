@@ -17,7 +17,6 @@ import {
 } from "./geditor_utils.js";
 import { Navbars1, card1, card2, card3, card4, Bottombar1, Bottombar2, Footers1, Footers2, Jumbotrons1, Jumbotrons2, Navbars2, Sidebars1, Sidebars2 } from "../plugins/TailwindComp/Index.js";
 // import { Bottombar1, Bottombar2, Bottombar3, Bottombar4 } from "../plugins/BottomBars/index.js";
-import { Button1, Button2, Button3, Button4 } from "../plugins/Buttons/index.js";
 import { Table1, Table2, Table3 } from "../plugins/Tables/index.js";
 // import reactComponents from "../react-components.js";
 // import baseReactComponent from "../base-react-component.js";
@@ -76,10 +75,6 @@ const geditorConfig = (assets, pageId) => {
       Jumbotrons2,
       Sidebars1,
       Sidebars2,
-      Button1,
-      Button2,
-      Button3,
-      Button4,
       Table1,
       Table2,
       Table3,
@@ -111,7 +106,8 @@ const geditorConfig = (assets, pageId) => {
     // This will be used to hide border
     editor.stopCommand("sw-visibility");
     // This will hide the sidebar view
-    navbar.removeClass("sidebar");
+    navbar.removeClass("sidenav");
+    mainContent.removeClass("w-85");
     // This will make the main-content to be full width
     mainContent.removeClass("main-content");
 
@@ -122,8 +118,10 @@ const geditorConfig = (assets, pageId) => {
     // This event is reverse of the above event.
     console.log("It will trigger when we click on cancel preview icon");
     editor.runCommand("sw-visibility");
-    navbar.addClass("sidebar");
+    navbar.addClass("sidenav");
     mainContent.addClass("main-content");
+    mainContent.addClass("w-85");
+
     panelTopBar.removeClass("d-none");
   });
   editor.on("component:selected", (component) => {
