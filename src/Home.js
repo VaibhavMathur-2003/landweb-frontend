@@ -27,6 +27,7 @@ const Home = () => {
 
   return (
     <div className="flex flex-col md:flex-row h-screen">
+      {/* Sidebar */}
       <div className="w-full md:w-64 bg-gradient-to-b from-blue-700 to-indigo-900 text-white px-4 py-6 rounded-sm">
         <h2 className="text-2xl font-bold mb-4">Land Web</h2>
         <ul className="space-y-2">
@@ -49,9 +50,11 @@ const Home = () => {
         </ul>
       </div>
 
+      {/* Main Content */}
       <div className="flex-1 p-4 bg-gray-100 overflow-x-auto">
         <div className="max-w-3xl mx-auto">
           <div className="flex justify-end mb-4">
+            {/* Button to open modal */}
             <button
               className="flex items-center py-2 px-4 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-300 ease-in-out"
               onClick={() => setIsModalOpen(true)}
@@ -60,6 +63,7 @@ const Home = () => {
               Create Page
             </button>
           </div>
+
           {/* Pages Section */}
           <div className="bg-white rounded-lg shadow-md overflow-x-auto">
             <div className="p-8">
@@ -78,12 +82,14 @@ const Home = () => {
                       </h6>
                       <p className="text-gray-700 mb-4">{page.slug}</p>
                       <div className="flex justify-between">
+                        {/* Edit link */}
                         <Link
                           to={`/editor/${page._id}`}
                           className="text-blue-500 hover:text-blue-700 font-medium"
                         >
                           Edit
                         </Link>
+                        {/* Delete button */}
                         <button
                           className="text-red-500 hover:text-red-700 font-medium"
                           onClick={() => handleDeletePage(page._id)}
@@ -91,9 +97,6 @@ const Home = () => {
                           Delete
                         </button>
                       </div>
-                      <button className="text-center bg-blue-600 text-white rounded-lg p-1 mt-3 w-full hover:bg-blue-700 transition duration-300 ease-in-out">
-                        React Code
-                      </button>
                     </div>
                   ))
                 ) : (
@@ -104,6 +107,8 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      {/* Popup Modal */}
       {isModalOpen && (
         <Popup
           onSave={handleCreatePage}
