@@ -17,8 +17,7 @@ import {
 } from "./geditor_utils.js";
 import { Navbars1, card1, card2, card3, card4, Bottombar1, Bottombar2, Footers1, Footers2, Jumbotrons1, Jumbotrons2, Navbars2, Sidebars1, Sidebars2 } from "../plugins/TailwindComp/Index.js";
 // import { Bottombar1, Bottombar2, Bottombar3, Bottombar4 } from "../plugins/BottomBars/index.js";
-import { Table1, Table2, Table3 } from "../plugins/Tables/index.js";
-import { cardb1, cardb2, cardb3, cardb4, Bottombarb1, Bottombarb2, Footersb1, Footersb2, Jumbotronsb1, Jumbotronsb2, Navbarsb2, Sidebarsb1, Sidebarsb2, Navbarsb1} from "../plugins/Bootstrap/Index.js";
+import { cardb1, cardb2,Footersb1, Footersb2, Jumbotronsb1, Jumbotronsb2, Navbarsb2, Sidebarsb1, Sidebarsb2, Navbarsb1} from "../plugins/Bootstrap/Index.js";
 // import reactComponents from "../react-components.js";
 // import baseReactComponent from "../base-react-component.js";
 // import MuiComponents from "../plugins/mui-components"
@@ -77,10 +76,9 @@ const geditorConfig = (assets, pageId) => {
       Sidebars1,
       Sidebars2,
       Navbarsb1,
-      cardb1, cardb2, cardb3, cardb4, Bottombarb1, Bottombarb2, Footersb1, Footersb2, Jumbotronsb1, Jumbotronsb2, Navbarsb2, Sidebarsb1, Sidebarsb2,
-      Table1,
-      Table2,
-      Table3,
+      Navbarsb2,
+      cardb1, cardb2, Footersb1, Footersb2, Jumbotronsb1, Jumbotronsb2, Sidebarsb1, Sidebarsb2,
+
       gjsBlockBasic,
       // swiperComponent,
       // chartLibComponent,
