@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useSignup } from "../Context/useSignUp";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import { useLogin } from "../Context/useLogin";
@@ -70,7 +69,7 @@ const SignUp = () => {
             </div>
           </div>
           <button
-            disabled={isLoading}
+            disabled={isLoading || isLoading1}
             type="submit"
             className="btn-primary w-full py-3 rounded-md text-white font-semibold bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
@@ -93,6 +92,7 @@ const SignUp = () => {
             Enter as Guest
           </button>
           </div>
+          {error || error1 ? <div>{error}</div>:<></> }
       </div>
     </div>
   );

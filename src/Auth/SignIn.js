@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useLogin } from "../Context/useLogin";
 import { Link } from "react-router-dom";
 
@@ -90,6 +89,7 @@ const SignIn = () => {
             Enter as Guest
           </button>
         </div>
+        {error ? <div>{error}</div>:<></> }
       </div>
     </div>
   );

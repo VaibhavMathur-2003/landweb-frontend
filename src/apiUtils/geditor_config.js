@@ -15,7 +15,7 @@ import {
   styles,
   traitManager,
 } from "./geditor_utils.js";
-import { Navbars1, card1, card2, card3, card4, Bottombar1, Bottombar2, Footers1, Footers2, Jumbotrons1, Jumbotrons2, Navbars2, Sidebars1, Sidebars2 } from "../plugins/TailwindComp/Index.js";
+import { Navbars1, card1, card2, Bottombar1, Bottombar2, Footers1, Footers2, Jumbotrons1, Jumbotrons2, Navbars2, Sidebars1, Sidebars2 } from "../plugins/TailwindComp/Index.js";
 // import { Bottombar1, Bottombar2, Bottombar3, Bottombar4 } from "../plugins/BottomBars/index.js";
 import { cardb1, cardb2,Footersb1, Footersb2, Jumbotronsb1, Jumbotronsb2, Navbarsb2, Sidebarsb1, Sidebarsb2, Navbarsb1} from "../plugins/Bootstrap/Index.js";
 // import reactComponents from "../react-components.js";

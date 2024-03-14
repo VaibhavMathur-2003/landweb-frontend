@@ -4,6 +4,7 @@ import axios from "axios";
 import geditorConfig from "./apiUtils/geditor_config";
 
 const Editor = () => {
+  // eslint-disable-next-line no-unused-vars
   const [editor, setEditor] = useState(null);
   const [assets, setAssets] = useState([]);
   const { pageId } = useParams();
