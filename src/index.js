@@ -7,15 +7,18 @@ import "./App.scss";
 import reportWebVitals from "./reportWebVitals";
 import DataProvider from "./redux/store";
 import { AuthContextProvider } from "./Context/AuthContext";
+import AuthProvider from "./redux/authStore";
 
 
 ReactDOM.render(
   <React.StrictMode>
-    <AuthContextProvider>
+    {/* <AuthContextProvider> */}
+    <AuthProvider>
     <DataProvider>
       <App />
     </DataProvider>
-    </AuthContextProvider>
+    </AuthProvider>
+    {/* </AuthContextProvider> */}
   </React.StrictMode>,
   document.getElementById("root")
 );

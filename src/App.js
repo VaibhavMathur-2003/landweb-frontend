@@ -5,7 +5,7 @@ import {
   Navigate,
   Routes,
 } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Home from "./Home";
 import Editor from "./Editor";
 import "./App.scss";
@@ -16,7 +16,10 @@ import { useAuthContext } from "./Context/useAuthContext";
 
 function App() {
   const dispatch = useDispatch();
-  const user = useAuthContext();
+  // const user = useAuthContext();
+  const { authStore } = useSelector((state) => state);
+  const {user} = authStore; 
+
 
   useEffect(() => {
     pageLoad(user)(dispatch);

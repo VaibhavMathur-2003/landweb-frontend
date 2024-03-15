@@ -7,7 +7,9 @@ import { useLogout } from "./Context/useLogout";
 import { useAuthContext } from "./Context/useAuthContext";
 
 const Home = () => {
-  const user = useAuthContext();
+  // const user = useAuthContext();
+  const { authStore } = useSelector((state) => state);
+  const {user} = authStore; 
   const { logout } = useLogout();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const dispatch = useDispatch();
