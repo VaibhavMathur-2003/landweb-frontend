@@ -28,7 +28,7 @@ const Popup = ({ onSave, onClose }) => {
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-4 hidden">
           <label htmlFor="description" className="block text-gray-700 font-semibold mb-2">
             Description
           </label>

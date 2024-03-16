@@ -3,25 +3,24 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { createPage, deletePage } from "./redux/actions/pageAction";
 import Popup from "./Popup";
-const Home = () => {
-  // const user = useAuthContext();
-  const {authStore} = useSelector((state1) => state1);
-  const {user} = authStore;
 
-  // const { logout } = useLogout();
+const Home = () => {
+  const { authStore } = useSelector((state1) => state1);
+  const { user } = authStore;
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const dispatch = useDispatch();
   const { pageStore } = useSelector((state) => state);
   const { pages } = pageStore;
 
-  useEffect(()=>{
-    const user = JSON.parse(localStorage.getItem('user'))
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"));
 
-    if(user){
-        dispatch({ type: 'LOGIN', payload: user})
+    if (user) {
+      dispatch({ type: "LOGIN", payload: user });
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleCreatePage = ({ name, description }) => {
     createPage(name, user)(dispatch);
@@ -35,8 +34,8 @@ const Home = () => {
   };
 
   const logout = () => {
-    localStorage.removeItem('user')
-    dispatch({ type: 'LOGOUT' });
+    localStorage.removeItem("user");
+    dispatch({ type: "LOGOUT" });
     // Perform any additional logout actions
   };
 
@@ -57,7 +56,7 @@ const Home = () => {
           <li>
             <button
               onClick={() => logout()}
-              className="block text-red-500 hover:text-blue-300 transition duration-300 ease-in-out"
+              className="block text-white hover:text-red-300 transition duration-300 ease-in-out font-semibold border-solid border-2 border-red-500 rounded-md p-1.5 absolute bottom-10 bg-red-800"
             >
               Logout
             </button>
@@ -88,6 +87,10 @@ const Home = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {pages && pages.length > 0 ? (
                   pages.map((page) => (
+                    <Link
+                    to={`/editor/${page._id}`}
+                    className=""
+                  >
                     <div
                       key={page._id}
                       className="bg-gray-100 p-4 rounded-md hover:shadow-2xl transition duration-200 ease-in-out"
@@ -95,15 +98,19 @@ const Home = () => {
                       <h6 className="text-lg font-semibold mb-2">
                         {page.name}
                       </h6>
-                      <p className="text-gray-700 mb-4">{page.slug}</p>
-                      <div className="flex justify-between">
+                      <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <rect x="45" y="10" width="10" height="80" fill="#FF5733"/>
+  <rect x="10" y="45" width="80" height="10" fill="#33FF57"/>
+  <rect x="35" y="10" width="10" height="40" fill="#3388FF"/>
+  <rect x="55" y="50" width="10" height="40" fill="#FFC300"/>
+</svg>
+
+                      {/* <p className="text-gray-700 mb-4">{page.slug}</p> */}
+                      <div className="flex justify-between text-blue-500 hover:text-blue-700 font-medium">
                         {/* Edit link */}
-                        <Link
-                          to={`/editor/${page._id}`}
-                          className="text-blue-500 hover:text-blue-700 font-medium"
-                        >
+                       
                           Edit
-                        </Link>
+                        
                         {/* Delete button */}
                         <button
                           className="text-red-500 hover:text-red-700 font-medium"
@@ -113,6 +120,7 @@ const Home = () => {
                         </button>
                       </div>
                     </div>
+                    </Link>
                   ))
                 ) : (
                   <p className="text-gray-500">No Page</p>

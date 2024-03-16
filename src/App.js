@@ -18,7 +18,6 @@ function App() {
   const {user} = authStore;
 
   const dispatch = useDispatch();
-  // const user = useAuthContext();
 
  
   useEffect(()=>{
