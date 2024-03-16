@@ -27,6 +27,7 @@ function App() {
     if(user){
         dispatch({ type: 'LOGIN', payload: user})
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   useEffect(() => {

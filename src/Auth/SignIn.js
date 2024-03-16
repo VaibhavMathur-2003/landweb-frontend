@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
 import { useLogin } from '../redux/actions/authActions';
-import { Link, useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { Link} from 'react-router-dom';
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { login, error, isLoading } = useLogin();
-  const navigate = useNavigate();
-  const {authStore} = useSelector((state) => state);
-  const {user} = authStore;
-
   
+  const { login, error, isLoading } = useLogin();  
 
   const handleSubmit = async (e) => {
     e.preventDefault();

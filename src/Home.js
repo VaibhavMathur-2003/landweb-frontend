@@ -20,6 +20,7 @@ const Home = () => {
     if(user){
         dispatch({ type: 'LOGIN', payload: user})
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   const handleCreatePage = ({ name, description }) => {

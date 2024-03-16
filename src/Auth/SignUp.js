@@ -6,6 +6,7 @@ import { useLogin } from '../redux/actions/authActions';
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  
   const { signup, error, isLoading } = useSignUp();
   const {login, error1, isLoading1} = useLogin();
 
