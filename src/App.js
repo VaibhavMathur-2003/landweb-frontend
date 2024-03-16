@@ -12,20 +12,29 @@ import "./App.scss";
 import { pageLoad } from "./redux/actions/pageAction";
 import SignIn from "./Auth/SignIn";
 import SignUp from "./Auth/SignUp";
-import { useAuthContext } from "./Context/useAuthContext";
 
 function App() {
+  const {authStore} = useSelector((state1) => state1);
+  const {user} = authStore;
+
   const dispatch = useDispatch();
   // const user = useAuthContext();
-  const { authStore } = useSelector((state) => state);
-  const {user} = authStore; 
 
+ 
+  useEffect(()=>{
+    const user = JSON.parse(localStorage.getItem('user'))
+
+    if(user){
+        dispatch({ type: 'LOGIN', payload: user})
+    }
+  },[])
 
   useEffect(() => {
     pageLoad(user)(dispatch);
   }, [dispatch, user]);
 
   const x = localStorage.getItem("user");
+
   return (
     <Router>
       <Routes>

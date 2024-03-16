@@ -1,13 +1,28 @@
 // store.js
+import { Provider } from 'react-redux';
+import { applyMiddleware, createStore } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
 
-import { createStore, applyMiddleware } from "redux";
-import { Provider } from "react-redux";
-import thunk from "redux-thunk";
-import { composeWithDevTools } from "redux-devtools-extension";
-import authReducer from "./reducers/authReducer";
+const initialState = {
+  user: null,
+};
 
-const store = createStore(authReducer, composeWithDevTools(applyMiddleware(thunk)));
+const authReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'LOGIN':
+      return { user: action.payload };
+    case 'LOGOUT':
+      return { user: null };
+    default:
+      return state;
+  }
+};
 
+const store = createStore(
+  authReducer,
+  composeWithDevTools(applyMiddleware(thunk))
+);
 
 const AuthProvider = ({ children }) => {
   return <Provider store={store}>{children}</Provider>;

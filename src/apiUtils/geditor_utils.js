@@ -595,8 +595,8 @@ export const storageSetting = (pageId) => {
       "Content-Type": "application/json",
     },
     id: "mycustom-",
-    urlStore: `${process.env.REACT_APP_BASE_URL}pages/${pageId}/content`,
-    urlLoad: `${process.env.REACT_APP_BASE_URL}pages/${pageId}/content`,
+    urlStore: `${process.env.REACT_APP_BASE_URL}pages/build/${pageId}/content`,
+    urlLoad: `${process.env.REACT_APP_BASE_URL}pages/build/${pageId}/content`,
   };
 };
 

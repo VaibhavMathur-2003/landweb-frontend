@@ -21,7 +21,7 @@ export const pageLoad = (user) => async (dispatch) => {
       `${process.env.REACT_APP_BASE_URL}pages/`,
       {
         headers: {
-          Authorization: `Bearer ${user.user.token}`,
+          Authorization: `Bearer ${user.token}`,
         },
       }
     );
@@ -32,7 +32,7 @@ export const pageLoad = (user) => async (dispatch) => {
 };
 
 export const createPage = (name, user) => async (dispatch) => {
-  
+
   dispatch({ type: TYPES.CREATE_PAGE_REQUEST });
   try {
     const response = await axios.post(
@@ -40,10 +40,11 @@ export const createPage = (name, user) => async (dispatch) => {
       { name },
       {
         headers: {
-          Authorization: `Bearer ${user.user.token}`,
+          Authorization: `Bearer ${user.token}`,
         },
       }
     );
+    console.log("hi")
     dispatch({ type: TYPES.CREATE_PAGE_SUCCESS, data: response.data });
   } catch (error) {
     dispatch({ type: TYPES.CREATE_PAGE_ERROR, data: error });
@@ -56,7 +57,7 @@ export const deletePage = (pageId, user) => async (dispatch) => {
   try {
     await axios.delete(`${process.env.REACT_APP_BASE_URL}pages/${pageId}`, {
       headers: {
-        Authorization: `Bearer ${user.user.token}`,
+        Authorization: `Bearer ${user.token}`,
       },
     });
     dispatch({ type: TYPES.DELETE_PAGE_SUCCESS, pageId });

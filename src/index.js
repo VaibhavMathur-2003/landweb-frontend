@@ -6,19 +6,14 @@ import App from "./App";
 import "./App.scss";
 import reportWebVitals from "./reportWebVitals";
 import DataProvider from "./redux/store";
-import { AuthContextProvider } from "./Context/AuthContext";
-import AuthProvider from "./redux/authStore";
+// import CombinedProvider from "./redux/reducers";
 
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <AuthContextProvider> */}
-    <AuthProvider>
     <DataProvider>
       <App />
     </DataProvider>
-    </AuthProvider>
-    {/* </AuthContextProvider> */}
   </React.StrictMode>,
   document.getElementById("root")
 );

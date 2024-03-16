@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useSignup } from "../Context/useSignUp";
+import { useSignUp } from "../redux/actions/authActions";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
-import { useLogin } from "../Context/useLogin";
+import { useLogin } from '../redux/actions/authActions';
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { signup, error, isLoading } = useSignup();
+  const { signup, error, isLoading } = useSignUp();
   const {login, error1, isLoading1} = useLogin();
 
   const handleSubmit = async (e) => {

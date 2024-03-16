@@ -1,22 +1,35 @@
-import React, { useState } from "react";
-import { useLogin } from "../Context/useLogin";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { useLogin } from '../redux/actions/authActions';
+import { Link, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const SignIn = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const { login, error, isLoading } = useLogin();
+  const navigate = useNavigate();
+  const {authStore} = useSelector((state) => state);
+  const {user} = authStore;
+
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     await login(email, password);
     // Redirect to another page after successful login
+    // if(user){
+    //   navigate("/");
+    // }
   };
 
   const handleEnterAsGuest = async () => {
     // Sign in with default guest credentials
     await login("test@gmail.com", "12345678");
     // Redirect to another page after successful login
+    // if(user){
+    //   navigate("/");
+    // }
+
   };
 
   return (

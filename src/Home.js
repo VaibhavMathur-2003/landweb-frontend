@@ -1,20 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { createPage, deletePage } from "./redux/actions/pageAction";
 import Popup from "./Popup";
-import { useLogout } from "./Context/useLogout";
-import { useAuthContext } from "./Context/useAuthContext";
-
 const Home = () => {
   // const user = useAuthContext();
-  const { authStore } = useSelector((state) => state);
-  const {user} = authStore; 
-  const { logout } = useLogout();
+  const {authStore} = useSelector((state1) => state1);
+  const {user} = authStore;
+
+  // const { logout } = useLogout();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const dispatch = useDispatch();
   const { pageStore } = useSelector((state) => state);
   const { pages } = pageStore;
+
+  useEffect(()=>{
+    const user = JSON.parse(localStorage.getItem('user'))
+
+    if(user){
+        dispatch({ type: 'LOGIN', payload: user})
+    }
+  },[])
 
   const handleCreatePage = ({ name, description }) => {
     createPage(name, user)(dispatch);
@@ -25,6 +31,12 @@ const Home = () => {
     if (window.confirm("Are you sure you want to delete this page?")) {
       dispatch(deletePage(pageId, user));
     }
+  };
+
+  const logout = () => {
+    localStorage.removeItem('user')
+    dispatch({ type: 'LOGOUT' });
+    // Perform any additional logout actions
   };
 
   return (
