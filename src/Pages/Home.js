@@ -122,12 +122,13 @@ const Home = () => {
                         key={page._id}
                         className="bg-gray-100 p-4 rounded-md hover:shadow-2xl transition duration-200 ease-in-out"
                       >
-                        <h6 className="text-lg font-semibold mb-2">
+                        <h6 className="text-lg text-center font-semibold mb-2">
                           {page.name}
                         </h6>
                         {/* <img className="rounded-md border-lime-600 border-4 border-solid my-2.5" src={cardimg} alt="" /> */}
+                        <div className="text-center text-lg text-center font-semibold mb-2">
                         <svg
-                          class="w-28 h-28 text-indigo-400"
+                          class="w-100 max-h-28 text-indigo-400"
                           aria-hidden="true"
                           xmlns="http://www.w3.org/2000/svg"
                           width="240"
@@ -142,7 +143,7 @@ const Home = () => {
                             fill="currentColor"
                           />
                         </svg>
-
+                        </div>
                         {/* <p className="text-gray-700 mb-4">{page.slug}</p> */}
                         <div className="flex justify-between text-blue-500 hover:text-blue-700 font-medium">
                           {/* Edit link */}
