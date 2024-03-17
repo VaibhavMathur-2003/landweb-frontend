@@ -6,8 +6,8 @@ import {
   Routes,
 } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import Home from "./Home";
-import Editor from "./Editor";
+import Home from "./Pages/Home";
+import Editor from "./Pages/Editor";
 import "./App.scss";
 import { pageLoad } from "./redux/actions/pageAction";
 import SignIn from "./Auth/SignIn";

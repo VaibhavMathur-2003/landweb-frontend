@@ -150,7 +150,7 @@ const geditorConfig = (assets, pageId) => {
   setTimeout(() => {
     let categories = editor.BlockManager.getCategories();
     categories.each((category) => category.set("open", false));
-  }, 1000);
+  }, 3000);
   return editor;
 };
 

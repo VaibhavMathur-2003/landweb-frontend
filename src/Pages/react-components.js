@@ -1,4 +1,4 @@
-import Listing from '../src/plugins/Listing';
+import Listing from '../plugins/Listing';
 
 export default (editor) => {
   editor.Components.addType('Listing', {

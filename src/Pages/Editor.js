@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import geditorConfig from "./apiUtils/geditor_config";
+import geditorConfig from "../apiUtils/geditor_config";
 
 const Editor = () => {
   // eslint-disable-next-line no-unused-vars
