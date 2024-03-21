@@ -157,7 +157,7 @@ const Home = () => {
                           </button>
                         </div>
                         <Link to={`/host/${page._id}`}>
-                          <button className="mt-4 py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300 ease-in-out w-full">
+                          <button className="mt-4 py-2 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-300 ease-in-out w-full hidden">
                             Host
                           </button>
                         </Link>
