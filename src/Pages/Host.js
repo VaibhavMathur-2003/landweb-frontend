@@ -8,7 +8,7 @@ const Host = () => {
   const { pageId } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/pages/build/${pageId}/content`)
+    axios.get(`${REACT_APP_BASE_URL}pages/build/${pageId}/content`)
       .then((res) => {
         setHtmls(res.data['mycustom-html']);
         setStyles(res.data['mycustom-css']);
