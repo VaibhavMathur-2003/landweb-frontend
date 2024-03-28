@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSignUp } from "../redux/actions/authActions";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import { useLogin } from "../redux/actions/authActions";
+import Game from "../Pages/Game";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -142,6 +143,7 @@ const SignUp = () => {
               </svg>
               <span class="sr-only">Loading...</span>
             </div>
+            <Game/>
           </div>
         ) : (
           <></>

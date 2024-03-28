@@ -70,7 +70,7 @@ export const Navbar1 = {
         <style>
         </style>
       `,
-  label: `<i class="fa fa-arrows-h"></i>`,
+  // label: `<i class="fa fa-arrows-h"></i>`,
 };
 export const Navbar2 = {
     content: `
@@ -194,7 +194,7 @@ export const Navbar2 = {
           <style>
           </style>
         `,
-    label: `<i class="fa fa-arrows-h"></i>`,
+    // label: `<i class="fa fa-arrows-h"></i>`,
   };
 export const Card1 = {
   content: `
@@ -219,7 +219,7 @@ export const Card1 = {
     
     
       </style>`,
-  label: `<i class="fa fa-arrows-h"></i>`,
+  // label: `<i class="fa fa-arrows-h"></i>`,
 };
 
 export const Card2 = {
@@ -237,7 +237,7 @@ export const Card2 = {
       `,
   style: `<style>
       </style>`,
-  label: `<i class="fa fa-arrows-h"></i>`,
+  // label: `<i class="fa fa-arrows-h"></i>`,
 };
 
 export const Card3 = {
@@ -280,7 +280,7 @@ export const Card3 = {
       `,
   style: `<style>
       </style>`,
-  label: `<i class="fa fa-arrows-h"></i>`,
+  // label: `<i class="fa fa-arrows-h"></i>`,
 };
 
 export const Card4 = {
@@ -324,7 +324,7 @@ export const Card4 = {
   style: `<style>
     
       </style>`,
-  label: `<i class="fa fa-arrows-h"></i>`,
+  // label: `<i class="fa fa-arrows-h"></i>`,
 };
 
 export const BottomBar1 = {
@@ -404,7 +404,7 @@ export const BottomBar1 = {
   style: `<style>
       
       </style>`,
-  label: `<i class="fa fa-arrows-h"></i>`,
+  // label: `<i class="fa fa-arrows-h"></i>`,
 };
 
 export const BottomBar2 = {
@@ -444,7 +444,7 @@ export const BottomBar2 = {
   style: `<style>
       
       </style>`,
-  label: `<i class="fa fa-arrows-h"></i>`,
+  // label: `<i class="fa fa-arrows-h"></i>`,
 };
 
 export const Footer1 = {
@@ -477,7 +477,7 @@ export const Footer1 = {
   style: `<style>
    
         </style>`,
-  label: `<i class="fa fa-arrows-h"></i>`,
+  // label: `<i class="fa fa-arrows-h"></i>`,
 };
 
 export const Footer2 = {
@@ -573,7 +573,7 @@ export const Footer2 = {
   style: `<style>
         
         </style>`,
-  label: `<i class="fa fa-arrows-h"></i>`,
+  // label: `<i class="fa fa-arrows-h"></i>`,
 };
 
 export const Jumbotron1 = {
@@ -606,7 +606,7 @@ export const Jumbotron1 = {
   style: `<style>
         
         </style>`,
-  label: `<i class="fa fa-arrows-h"></i>`,
+  // label: `<i class="fa fa-arrows-h"></i>`,
 };
 
 export const Jumbotron2 = {
@@ -642,7 +642,7 @@ export const Jumbotron2 = {
           
           </style>`,
           
-  label: `<i class="fa fa-arrows-h"></i>`,
+  // label: `<i class="fa fa-arrows-h"></i>`,
 };
 
 
@@ -808,7 +808,7 @@ export const Sidebar1 = {
           <style>
           </style>
         `,
-    label: `<i class="fa fa-arrows-h"></i>`,
+    // label: `<i class="fa fa-arrows-h"></i>`,
   };
 
   export const Sidebar2 = {
@@ -1029,5 +1029,5 @@ export const Sidebar1 = {
           <style>
           </style>
         `,
-    label: `<i class="fa fa-arrows-h"></i>`,
+    // label: `<i class="fa fa-arrows-h"></i>`,
   };
