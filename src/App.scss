@@ -23,7 +23,7 @@ html {
 .sidenav {
   top: 0;
   right: 0;
-  width: 15%;
+  width: 13%;
   height: 100vh;
   overflow: scroll;
   overflow-x: hidden;
@@ -46,7 +46,7 @@ html {
   }
 }
 .w-85 {
-  width: 85%;
+  width: 87%;
 }
 .start-15 {
   left: 0;
@@ -99,6 +99,9 @@ html {
     }
     .gjs-block {
       justify-content: center;
+      width: 180px;
+      height: 120px;
+      padding: 0px;
     }
   }
 }
@@ -216,6 +219,7 @@ html {
   .fa {
     font-size: 25px;
   }
+  margin: auto;
 }
 
 .grp-preview {

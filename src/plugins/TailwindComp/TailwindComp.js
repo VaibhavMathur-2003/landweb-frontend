@@ -70,7 +70,7 @@ export const Navbar1 = {
         <style>
         </style>
       `,
-  // label: `<i class="fa fa-arrows-h"></i>`,
+  label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/gps-device.png" alt="gps-device"/>`,
 };
 export const Navbar2 = {
     content: `
@@ -194,7 +194,7 @@ export const Navbar2 = {
           <style>
           </style>
         `,
-    // label: `<i class="fa fa-arrows-h"></i>`,
+    label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/menu-squared-2.png" alt="menu-squared-2"/>`,
   };
 export const Card1 = {
   content: `
@@ -219,7 +219,7 @@ export const Card1 = {
     
     
       </style>`,
-  // label: `<i class="fa fa-arrows-h"></i>`,
+  label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/insert-card.png" alt="insert-card"/>`,
 };
 
 export const Card2 = {
@@ -237,7 +237,7 @@ export const Card2 = {
       `,
   style: `<style>
       </style>`,
-  // label: `<i class="fa fa-arrows-h"></i>`,
+  label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/bank-card-back-side.png" alt="bank-card-back-side"/>`,
 };
 
 export const Card3 = {
@@ -280,7 +280,7 @@ export const Card3 = {
       `,
   style: `<style>
       </style>`,
-  // label: `<i class="fa fa-arrows-h"></i>`,
+  label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/gps-device.png" alt="gps-device"/>`,
 };
 
 export const Card4 = {
@@ -324,14 +324,11 @@ export const Card4 = {
   style: `<style>
     
       </style>`,
-  // label: `<i class="fa fa-arrows-h"></i>`,
+  label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/gps-device.png" alt="gps-device"/>`,
 };
 
 export const BottomBar1 = {
   content: `
-    
-
-
     <div class="fixed bottom-0 z-50 w-full -translate-x-1/2 bg-white border-t border-gray-200 left-1/2 dark:bg-gray-700 dark:border-gray-600">
     <div class="w-full">
         <div class="grid max-w-xs grid-cols-3 gap-1 p-1 mx-auto my-2 bg-gray-100 rounded-lg dark:bg-gray-600" role="group">
@@ -404,7 +401,7 @@ export const BottomBar1 = {
   style: `<style>
       
       </style>`,
-  // label: `<i class="fa fa-arrows-h"></i>`,
+  label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/chevron-down.png" alt="chevron-down"/>`,
 };
 
 export const BottomBar2 = {
@@ -444,7 +441,7 @@ export const BottomBar2 = {
   style: `<style>
       
       </style>`,
-  // label: `<i class="fa fa-arrows-h"></i>`,
+  label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/circled-chevron-down.png" alt="circled-chevron-down"/>`,
 };
 
 export const Footer1 = {
@@ -477,7 +474,7 @@ export const Footer1 = {
   style: `<style>
    
         </style>`,
-  // label: `<i class="fa fa-arrows-h"></i>`,
+  label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/minimize-window.png" alt="minimize-window"/>`,
 };
 
 export const Footer2 = {
@@ -573,13 +570,11 @@ export const Footer2 = {
   style: `<style>
         
         </style>`,
-  // label: `<i class="fa fa-arrows-h"></i>`,
+  label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/low-priority.png" alt="low-priority"/>`,
 };
 
 export const Jumbotron1 = {
   content: `
-    
-
 <section class="bg-gray-900">
 <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 grid lg:grid-cols-2 gap-8 lg:gap-16">
     <div class="flex flex-col justify-center">
@@ -606,13 +601,11 @@ export const Jumbotron1 = {
   style: `<style>
         
         </style>`,
-  // label: `<i class="fa fa-arrows-h"></i>`,
+  label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/picture-in-picture.png" alt="picture-in-picture"/>`,
 };
 
 export const Jumbotron2 = {
   content: `
-    
-
 <section class="bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
 <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative">
     <a href="#" class="inline-flex justify-between items-center py-1 px-1 pe-4 mb-7 text-sm text-blue-700 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800">
@@ -642,7 +635,7 @@ export const Jumbotron2 = {
           
           </style>`,
           
-  // label: `<i class="fa fa-arrows-h"></i>`,
+  label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/web.png" alt="web"/>`,
 };
 
 
@@ -808,7 +801,7 @@ export const Sidebar1 = {
           <style>
           </style>
         `,
-    // label: `<i class="fa fa-arrows-h"></i>`,
+    label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/menu-squared.png" alt="menu-squared"/>`,
   };
 
   export const Sidebar2 = {
@@ -1029,5 +1022,5 @@ export const Sidebar1 = {
           <style>
           </style>
         `,
-    // label: `<i class="fa fa-arrows-h"></i>`,
+    label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/menu-2.png" alt="menu-2"/>`,
   };

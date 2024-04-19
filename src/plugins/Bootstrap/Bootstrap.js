@@ -40,7 +40,7 @@ export const NavbarB1 = {
           <style>
           </style>
         `,
-  label: `<i class="fa fa-arrows-h"></i>`,
+  label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/gps-device.png" alt="gps-device"/>`,
 };
 export const NavbarB2 = {
   content: `<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
@@ -110,7 +110,7 @@ export const NavbarB2 = {
             <style>
             </style>
           `,
-  label: `<i class="fa fa-arrows-h"></i>`,
+  label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/menu-squared-2.png" alt="menu-squared-2"/>`,
 };
 export const CardB1 = {
   content: `<div class="card" style="width: 18rem;">
@@ -125,7 +125,7 @@ export const CardB1 = {
       
       
         </style>`,
-  label: `<i class="fa fa-arrows-h"></i>`,
+  label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/insert-card.png" alt="insert-card"/>`,
 };
 
 export const CardB2 = {
@@ -154,7 +154,7 @@ export const CardB2 = {
   </div>`,
   style: `<style>
         </style>`,
-  label: `<i class="fa fa-arrows-h"></i>`,
+  label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/bank-card-back-side.png" alt="bank-card-back-side"/>`,
 };
 
 export const CardB3 = {
@@ -197,7 +197,7 @@ export const CardB3 = {
         `,
   style: `<style>
         </style>`,
-  label: `<i class="fa fa-arrows-h"></i>`,
+  label: ``,
 };
 
 export const CardB4 = {
@@ -241,7 +241,7 @@ export const CardB4 = {
   style: `<style>
       
         </style>`,
-  label: `<i class="fa fa-arrows-h"></i>`,
+  label: ``,
 };
 
 export const BottomBarB1 = {
@@ -321,7 +321,7 @@ export const BottomBarB1 = {
   style: `<style>
         
         </style>`,
-  label: `<i class="fa fa-arrows-h"></i>`,
+  label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/chevron-down.png" alt="chevron-down"/>`,
 };
 
 export const BottomBarB2 = {
@@ -361,7 +361,7 @@ export const BottomBarB2 = {
   style: `<style>
         
         </style>`,
-  label: `<i class="fa fa-arrows-h"></i>`,
+  label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/circled-chevron-down.png" alt="circled-chevron-down"/>`,
 };
 
 export const FooterB1 = {
@@ -453,7 +453,7 @@ export const FooterB1 = {
   style: `<style>
      
           </style>`,
-  label: `<i class="fa fa-arrows-h"></i>`,
+  label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/minimize-window.png" alt="minimize-window"/>`,
 };
 
 export const FooterB2 = {
@@ -582,7 +582,7 @@ export const FooterB2 = {
   style: `<style>
           
           </style>`,
-  label: `<i class="fa fa-arrows-h"></i>`,
+  label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/low-priority.png" alt="low-priority"/>`,
 };
 
 export const JumbotronB1 = {
@@ -636,7 +636,7 @@ export const JumbotronB1 = {
     }
   </style>
           </style>`,
-  label: `<i class="fa fa-arrows-h"></i>`,
+  label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/picture-in-picture.png" alt="picture-in-picture"/>`,
 };
 
 export const JumbotronB2 = {
@@ -674,7 +674,7 @@ export const JumbotronB2 = {
             
             </style>`,
 
-  label: `<i class="fa fa-arrows-h"></i>`,
+  label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/web.png" alt="web"/>`,
 };
 
 export const SidebarB1 = {
@@ -736,7 +736,7 @@ export const SidebarB1 = {
             <style>
             </style>
           `,
-  label: `<i class="fa fa-arrows-h"></i>`,
+  label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/menu-squared.png" alt="menu-squared"/>`,
 };
 
 export const SidebarB2 = {
@@ -797,5 +797,5 @@ export const SidebarB2 = {
             <style>
             </style>
           `,
-  label: `<i class="fa fa-arrows-h"></i>`,
+  label: `<img width="64" height="64" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/menu-2.png" alt="menu-2"/>`,
 };
