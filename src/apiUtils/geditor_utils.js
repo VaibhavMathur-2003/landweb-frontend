@@ -451,6 +451,7 @@ export const panels = {
           label: '<i class="fa fa-clone"></i>',
           command: "sw-visibility", // Built-in command
         },
+
         
       ],
     },
@@ -480,11 +481,7 @@ export const panels = {
         //   className: "fa fa-repeat",
         //   command: "redo",
         // },
-        {
-          id: "export",
-          className: "fa fa-download",
-          command: "export",
-        },
+        
         // {
         //   id: "preview",
         //   className: "fa fa-eye",
@@ -494,7 +491,7 @@ export const panels = {
           id: "code",
           className: "font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out",
           command: "code",
-          label: '<button>Code</button>'
+          label: '<i class="fa fa-code"></i>'
 
         },
       ],
@@ -515,6 +512,11 @@ export const panels = {
           label: '<i class="fa fa-mobile"></i>',
           command: "set-device-mobile",
           togglable: false,
+        },
+        {
+          id: "export",
+          className: "fa fa-download",
+          command: "export",
         },
       ],
     },

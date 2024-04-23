@@ -1,39 +1,42 @@
 import React, { useState } from "react";
-import { useSignUp } from "../redux/actions/authActions";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
-import { useLogin } from "../redux/actions/authActions";
+import { useLogin, useSignUp } from "../redux/actions/authActions";
+import "../App.scss"
+import { Link } from "react-router-dom";
 import Game from "../Pages/Game";
 
 const SignUp = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const { signup, error, isLoading } = useSignUp();
-  const { login, error1, isLoading1 } = useLogin();
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    await signup(email, password);
-    // Redirect to another page after successful sign up
-  };
-  const handleEnterAsGuest = async () => {
-    // Sign in with default guest credentials
-    await login("test@gmail.com", "12345678");
-    // Redirect to another page after successful login
-  };
-
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+  
+    const { signup, error, isLoading } = useSignUp();
+    const { login, error1, isLoading1 } = useLogin();
+  
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      await signup(email, password);
+      // Redirect to another page after successful sign up
+    };
+    const handleEnterAsGuest = async () => {
+      // Sign in with default guest credentials
+      await login("test@gmail.com", "12345678");
+      // Redirect to another page after successful login
+    };
   return (
-    <div
-      className="min-h-screen flex flex-col items-center justify-center bg-cover"
-      style={{
-        backgroundImage: `url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
-      }}
-    >
-      <h1 className="text-4xl font-extrabold text-white mb-6">
-        Welcome to landweb
-      </h1>
-
-      <div className="max-w-md w-full bg-white bg-opacity-90 rounded-lg shadow-lg p-8">
+    <div className="flex h-screen">
+      <div className="w-1/2 bg-green-100 p-8 flex flex-col justify-center items-center">
+        <div className="relative">
+          {!isLoading ? 
+          <img
+            src="https://images.unsplash.com/photo-1713694847163-f9fce967c146?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHx8"
+            alt="Bird Illustration"
+            className="w-64 h-64"
+          />
+          : <Game/>}
+        </div>
+      </div>
+      <div className="w-1/2 bg-white p-8 flex flex-col justify-center items-center">
+        <h1 className="text-3xl font-bold text-gray-800 mb-4">Landweb</h1>
+        <p className="text-lg text-gray-600 mb-6">Welcome to Landweb</p>
         {error ? (
           <div
             id="alert-2"
@@ -78,92 +81,89 @@ const SignUp = () => {
         ) : (
           <></>
         )}
-        <h2 className="text-center text-3xl font-extrabold text-gray-900 mb-6">
-          Sign up for an account
-        </h2>
-        <form className="space-y-6" onSubmit={handleSubmit}>
-          <div className="space-y-4">
-            <div>
-              <label htmlFor="email-address" className="sr-only">
-                Email address
-              </label>
-              <input
-                id="email-address"
-                name="email"
-                type="email"
-                autoComplete="email"
-                required
-                className="input-field"
-                placeholder="Email address"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div>
-              <label htmlFor="password" className="sr-only">
-                Password
-              </label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                autoComplete="new-password"
-                required
-                className="input-field"
-                placeholder="Password"
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
+        <form className="w-full max-w-sm" onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <label
+              className="block text-gray-700 font-bold mb-2"
+              htmlFor="username"
+            >
+              Email
+            </label>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="username"
+              type="text"
+              placeholder="Your Name"
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
-          <button
-            disabled={isLoading || isLoading1}
-            type="submit"
-            className="btn-primary w-full py-3 rounded-md text-white font-semibold bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          >
-            Sign up
-          </button>
-        </form>
-        {isLoading ? (
-          <div class="text-center my-3">
-            <div role="status">
-              <svg
-                aria-hidden="true"
-                class="inline w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
-                viewBox="0 0 100 101"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-                  fill="currentColor"
-                />
-                <path
-                  d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-                  fill="currentFill"
-                />
-              </svg>
-              <span class="sr-only">Loading...</span>
-            </div>
-            <Game/>
+          <div className="mb-6">
+            <label
+              className="block text-gray-700 font-bold mb-2"
+              htmlFor="password"
+            >
+              Password
+            </label>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              id="password"
+              type="password"
+              placeholder="********"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+           
           </div>
-        ) : (
-          <></>
-        )}
-        {/* Link/button to sign in */}
-        <div className="text-center mt-4">
+          <div className="flex items-center justify-center">
+            <button
+              className="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              disabled={isLoading || isLoading1}
+              type="submit"
+  
+            >
+              Sign Up
+            </button>
+
+          </div>
+          <div className="text-center mt-4">
           Already have an account?{" "}
           <Link to="/signin" className="text-indigo-600 hover:underline">
             Sign in here
           </Link>
         </div>
-        <div className="text-center mt-4">
-          <button
+
+        </form>
+        <p className="mt-4 text-gray-600">
+          <span
+            className="text-blue-500 hover:text-blue-800 font-semibold cursor-pointer"
             onClick={handleEnterAsGuest}
-            className="text-indigo-600 hover:underline"
           >
-            Enter as Guest
-          </button>
-        </div>
-        {error || error1 ? <div>{error}</div> : <></>}
+            Enter as Guest.
+          </span>
+          {error || error1 ? <div>{error}</div> : <></>}
+
+        </p>
+        {isLoading?<div class="text-center my-3">
+          <div role="status">
+            <svg
+              aria-hidden="true"
+              class="inline w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+              viewBox="0 0 100 101"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                fill="currentColor"
+              />
+              <path
+                d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                fill="currentFill"
+              />
+            </svg>
+            <span class="sr-only">Loading...</span>
+          </div>
+          <Game/>
+        </div>:<></>}
       </div>
     </div>
   );

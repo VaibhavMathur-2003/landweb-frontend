@@ -3,10 +3,12 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
 
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif; // Use Poppins font
 }
 
 html {
@@ -23,16 +25,17 @@ html {
 .sidenav {
   top: 0;
   right: 0;
-  width: 13%;
+  width: 16%;
   height: 100vh;
   overflow: scroll;
   overflow-x: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.95); /* Light background */
   transition: 0.5s;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.3);
+  
   .logo {
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     text-transform: uppercase;
@@ -45,30 +48,31 @@ html {
     overflow-x: hidden;
   }
 }
+
 .w-85 {
-  width: 87%;
+  width: 84%;
 }
+
 .start-15 {
   left: 0;
 }
-.main-content {
-  .navbar {
-    padding: 0;
-    .container-fluid {
-      padding: 0;
-    }
-    background-color: #373D49;
-    ;
-  }
 
-  #editor {
-    border: 2px solid rgba(0, 0, 0, 0.3);
+.main-content .navbar {
+  padding: 0;
+  .container-fluid {
+    padding: 0;
   }
+  background-color: #373D49; /* Darker navbar */
+}
+
+#editor {
+  border: 2px solid rgba(0, 0, 0, 0.3);
 }
 
 .nav {
   justify-content: space-between;
 }
+
 .gjs-pn-panel {
   position: relative;
 }
@@ -86,8 +90,7 @@ html {
 #block {
   height: 100%;
   font-weight: 700;
-  background-color: #373D49;
-
+  background-color: #373D49; /* Dark background */
 
   #blocks {
     height: 100%;
@@ -95,96 +98,82 @@ html {
     .gjs-blocks-c {
       align-items: center;
       justify-content: center;
-      
     }
     .gjs-block {
       justify-content: center;
+      box-shadow: rgba(46, 198, 240, 0.4) -5px 5px, rgba(46, 191, 240, 0.3) -10px 10px, rgba(46, 204, 240, 0.2) -15px 15px, rgba(46, 204, 240, 0.1) -20px 20px, rgba(46, 166, 240, 0.05) -25px 25px;
       width: 180px;
       height: 120px;
       padding: 0px;
+      background-color: #384649;
     }
   }
 }
 
 /* Theming */
-// .gjs-one-bg {
-//   background-color: #fcf6f5ff;
-// }
-
 .gjs-two-color {
-  color: #00FFFF;
+  color: #00FFFF; /* Cyan color for certain elements */
 }
 
-.gjs-pn-btn{
+.gjs-pn-btn {
   margin: 0px 4px;
-
+  box-shadow: rgb(122, 184, 255) 0px 0px 0px 1px;
 }
-.gjs-pn-btn:hover {
-  color: #e5ff00;
-  box-shadow: 0 0 30px rgba(207, 203, 203, 0.3);
 
+.gjs-pn-btn:hover {
+  color: #e5ff00; /* Yellow color on hover */
+  box-shadow: 0 0 30px rgba(207, 203, 203, 0.3); /* Soft shadow */
 }
 
 .gjs-three-bg {
-  background-color: rgb(24, 97, 199);
-  color: #fcf6f5ff;
+  background-color: rgb(24, 97, 199); /* Different shade of blue */
+  color: #fcf6f5ff; /* Light text color */
 }
 
 .gjs-four-color,
 .gjs-four-color-h:hover {
-  border: 2px solid rgb(230, 218, 218);
-  color: #e5ff00;
-  box-shadow: 0 0 30px rgba(207, 203, 203, 0.3); /* Add box shadow */
+  border: 2px solid rgb(230, 218, 218); /* Light border */
+  color: #e5ff00; /* Yellow color */
+  box-shadow: 0 0 30px rgba(207, 203, 203, 0.3); /* Soft shadow */
 }
 
-
-// Customize Bootstrap CSS
+/* Customize Bootstrap CSS */
 
 .btn,
 .nav-link,
 .modal-content,
 .form-control {
   border-radius: 0 !important;
-  color: #35D7BB
-
+  color: #35D7BB; /* Teal color for buttons and links */
 }
 
-.nav-link:hover{
-  color: #35D7BB
-
+.nav-link:hover {
+  color: #35D7BB; /* Teal color on hover */
 }
 
-.btn {
-  .fa {
-    color: #35D7BB;
-  }
-  &:hover {
-    .fa {
-      color: #35D7BB
-
-    }
-  }
+.btn .fa,
+.btn:hover .fa {
+  color: #35D7BB; /* Teal color for icons inside buttons */
 }
 
 /** Error **/
-.error {
-  .bg-body {
-    min-height: 150px;
-    max-height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .title {
-      font-weight: 600;
-    }
+.error .bg-body {
+  min-height: 150px;
+  max-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .title {
+    font-weight: 600;
   }
-  .btn {
-    border-radius: 40px !important;
-    padding: 15px 20px;
-    font-size: 14px;
-    font-weight: 700;
-    min-width: 150px;
-  }
+}
+
+.error .btn {
+  border-radius: 40px !important;
+  padding: 15px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  min-width: 150px;
 }
 
 /** Assets **/
@@ -214,6 +203,7 @@ html {
 .gjs-am-preview-cont {
   margin-top: 1rem;
 }
+
 .gjs-block-label {
   font-size: 12px;
   .fa {
@@ -230,6 +220,7 @@ html {
   height: 100%;
   cursor: crosshair;
 }
+
 .grp-handler {
   width: 4px;
   margin-left: -2px;
@@ -250,9 +241,6 @@ html {
   line-height: 10px;
   font-size: 21px;
   cursor: pointer;
-}
-
-.grp-handler-close {
   position: absolute;
   top: -17px;
 }
@@ -293,13 +281,13 @@ html {
 }
 
 #navbar {
-  background-color: #373D49;
+  background-color: #373D49; /* Darker navbar */
 }
 
 .gjs-row {
   padding: 0px;
 }
 
-.gjs-block-categories{
-  color: white;
+.gjs-block-categories {
+  color: white; /* White text for block categories */
 }
