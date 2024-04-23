@@ -23,18 +23,18 @@ const SignUp = () => {
     };
   return (
     <div className="flex h-screen">
-      <div className="w-1/2 bg-green-100 p-8 flex flex-col justify-center items-center">
+      <div className="w-1/2 max-md:hidden bg-green-100 p-8 flex flex-col justify-center items-center">
         <div className="relative">
           {!isLoading ? 
           <img
-            src="https://images.unsplash.com/photo-1713694847163-f9fce967c146?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHx8"
+            src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wfGVufDB8fDB8fHww"
             alt="Bird Illustration"
-            className="w-64 h-64"
+            // className="w-64 h-64"
           />
           : <Game/>}
         </div>
       </div>
-      <div className="w-1/2 bg-white p-8 flex flex-col justify-center items-center">
+      <div className="w-1/2 max-md:w-screen bg-white p-8 flex flex-col justify-center items-center">
         <h1 className="text-3xl font-bold text-gray-800 mb-4">Landweb</h1>
         <p className="text-lg text-gray-600 mb-6">Welcome to Landweb</p>
         {error ? (
