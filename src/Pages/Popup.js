@@ -13,7 +13,7 @@ const Popup = ({ onSave, onClose }) => {
   return (
     <div className="fixed inset-0 flex justify-center items-center bg-gray-800 bg-opacity-75 z-50">
       <div className="bg-white p-8 rounded-lg">
-        <h2 className="text-2xl font-bold mb-4">Create Page</h2>
+        <h2 className="text-2xl font-bold mb-4 text-black">Create Page</h2>
         <div className="mb-4">
           <label htmlFor="name" className="block text-gray-700 font-semibold mb-2">
             Name
