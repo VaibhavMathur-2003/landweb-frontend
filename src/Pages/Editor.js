@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import geditorConfig from "../apiUtils/geditor_config";
+import "./Editor.scss"
 
 const Editor = () => {
   // eslint-disable-next-line no-unused-vars
@@ -36,7 +37,7 @@ const Editor = () => {
         >
           <ul className="nav nav-tabs" id="myTab" role="tablist">
             <li className="nav-item" role="presentation">
-              <button
+              <button aria-label="btn"
                 className="nav-link active"
                 id="block-tab"
                 data-bs-toggle="tab"
@@ -50,7 +51,7 @@ const Editor = () => {
               </button>
             </li>
             {/* <li className="nav-item" role="presentation">
-              <button
+              <button aria-label="btn"
                 className="nav-link"
                 id="layer-tab"
                 data-bs-toggle="tab"
@@ -64,7 +65,7 @@ const Editor = () => {
               </button>
             </li> */}
             <li className="nav-item" role="presentation">
-              <button
+              <button aria-label="btn"
                 className="nav-link"
                 id="trait-tab"
                 data-bs-toggle="tab"
@@ -78,7 +79,7 @@ const Editor = () => {
               </button>
             </li>
             <li className="nav-item" role="presentation">
-              <button
+              <button aria-label="btn"
                 className="nav-link"
                 id="style-tab"
                 data-bs-toggle="tab"

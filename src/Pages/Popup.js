@@ -43,14 +43,14 @@ const Popup = ({ onSave, onClose }) => {
           />
         </div>
         <div className="flex justify-end">
-          <button
+          <button aria-label="btn"
             type="button"
             className="mr-2 py-2 px-6 border border-gray-300 rounded-md text-lg font-medium text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
             onClick={onClose}
           >
             Cancel
           </button>
-          <button
+          <button aria-label="btn"
             type="button"
             className="py-2 px-6 border border-transparent rounded-md text-lg font-medium text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
             onClick={handleSave}

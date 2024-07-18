@@ -12,7 +12,6 @@ import "./App.scss";
 import { pageLoad } from "./redux/actions/pageAction";
 import SignIn from "./Auth/SignIn";
 import SignUp from "./Auth/SignUp";
-import Host from "./Pages/Host";
 
 function App() {
   const {authStore} = useSelector((state1) => state1);
@@ -55,7 +54,6 @@ function App() {
           path="/signup"
           element={!x ? <SignUp /> : <Navigate to="/" />}
         />
-        <Route exact path="/host/:pageId" element={<Host/>}/>
       </Routes>
     </Router>
   );

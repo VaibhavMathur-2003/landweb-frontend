@@ -437,7 +437,7 @@ export const panels = {
           id: "preview",
           className: "font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out",
           command: "preview",
-          label: '<button>Preview</button>'
+          label: '<button aria-label="btn">Preview</button>'
         },
         // {
         //   id: "code",
@@ -463,7 +463,7 @@ export const panels = {
           id: "saveDb",
           className: "font-bold py-2 px-4 rounded-lg shadow-md transition duration-300 ease-in-out btn-save",
           command: "saveDb",
-          label: '<button>Save</button>'
+          label: '<button aria-label="btn">Save</button>'
 
         },
         // {

@@ -92,7 +92,7 @@ function Game() {
           <p className="text-xl font-bold">
             {winner === "Draw" ? "It's a draw!" : `${winner} wins!`}
           </p>
-          <button
+          <button aria-label="btn"
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
             onClick={resetGame}
           >

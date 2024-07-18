@@ -1,82 +1,77 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { createPage, deletePage } from "../redux/actions/pageAction";
 import Popup from "./Popup";
 
-const templates = [
-  {
-    id: ':2z',
-    title: 'Contact Information',
-    imgSrc: 'https://ssl.gstatic.com/docs/templates/thumbnails/1xQF3s6EP0d58H-XJ7R440OpREKo4KqEapa0mkw43RPE_400_1.png',
-    style: 'Simple',
-  },
-  {
-    id: ':30',
-    title: 'RSVP',
-    imgSrc: 'https://ssl.gstatic.com/docs/templates/thumbnails/1kkUjv3G7-PgOEUPMTiKvKResxGxS7MTsy5Amj4b0Trw_400_1.png',
-    style: 'Lively',
-  },
-  {
-    id: ':31',
-    title: 'Party Invite',
-    imgSrc: 'https://ssl.gstatic.com/docs/templates/thumbnails/1m0UYQl1LSGxl3sGsh9_xjim4hUYQ8BO_zbvcFXv1Qug_400_1.png',
-    style: 'Lively',
-  },
-  {
-    id: ':32',
-    title: 'T-Shirt Sign Up',
-    imgSrc: 'https://ssl.gstatic.com/docs/templates/thumbnails/134dbGrMBrHFEfdPk5UpsZWEBZb7xJrOKRdESE58Fvcg_400_1.png',
-    style: 'Plum',
-  },
-  {
-    id: ':33',
-    title: 'Event Registration',
-    imgSrc: 'https://ssl.gstatic.com/docs/templates/thumbnails/1pM0fD5FWTXCGw4h0g1WSP8Nj3mS56l1EaCZAec-p2uc_400_1.png',
-    style: 'Lively',
-  },
-];
-
-
 const Home = () => {
-  const { authStore } = useSelector((state1) => state1);
+  const { authStore, pageStore } = useSelector((state) => state);
   const { user } = authStore;
+  const { pages } = pageStore;
+
   const [searchQuery, setSearchQuery] = useState("");
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const dispatch = useDispatch();
-  const { pageStore } = useSelector((state) => state);
-  const { pages } = pageStore;
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
-
     if (user) {
       dispatch({ type: "LOGIN", payload: user });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dispatch]);
 
-  const filteredPages = pages.filter((page) =>
-    page.name.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredPages = useMemo(
+    () =>
+      pages.filter((page) =>
+        page.name.toLowerCase().includes(searchQuery.toLowerCase())
+      ),
+    [pages, searchQuery]
   );
 
-  const handleCreatePage = ({ name, description }) => {
-    createPage(name, user)(dispatch);
-    setIsModalOpen(false);
-  };
+  const handleCreatePage = useCallback(
+    ({ name, description }) => {
+      createPage(name, user)(dispatch);
+      setIsModalOpen(false);
+    },
+    [dispatch, user]
+  );
 
-  const handleDeletePage = (pageId) => {
-    if (window.confirm("Are you sure you want to delete this page?")) {
-      dispatch(deletePage(pageId, user));
-    }
-  };
+  const handleDeletePage = useCallback(
+    (pageId) => {
+      if (window.confirm("Are you sure you want to delete this page?")) {
+        dispatch(deletePage(pageId, user));
+      }
+    },
+    [dispatch, user]
+  );
 
-  const logout = () => {
+  const logout = useCallback(() => {
     localStorage.removeItem("user");
     dispatch({ type: "LOGOUT" });
-    // Perform any additional logout actions
+  }, [dispatch]);
+
+  const gradients = useMemo(() => {
+    const colors = [
+      "#DB7093",
+      "#C71585",
+      "#ADFF2F",
+      "#00FFFF",
+      "#4682B4",
+      "#0000FF",
+      "#4B0082",
+    ];
+
+    return colors.map((color1) =>
+      colors.map((color2) => `linear-gradient(to right, ${color1}, ${color2})`)
+    );
+  }, []);
+
+  const generateRandomGradient = () => {
+    const gradient = gradients[Math.floor(Math.random() * gradients.length)];
+    return gradient;
   };
+
   return (
     <div className="bg-gray-900 text-white p-0 min-h-screen">
       <nav className="bg-gray-900">
@@ -134,6 +129,7 @@ const Home = () => {
             <div className="flex flex-col justify-between">
               <div className="hs-tooltip [--placement:right] inline-block">
                 <button
+                  aria-label="btn"
                   type="button"
                   onClick={() => logout()}
                   className="hs-tooltip-toggle w-[2.375rem] h-[2.375rem] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-full border border-transparent text-gray-500 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none"
@@ -225,69 +221,36 @@ const Home = () => {
           </div>
         </div>
       </nav>
-      <div className="bg-gray-700 py-3 px-3">
-        <div className="max-w-screen-lg mx-auto">
-          <div className="mb-8">
-            <h2 className="text-2xl font-semibold">Templates</h2>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-7 gap-4">
-          {templates && templates.length > 0 ? (
 
-            templates.map((page) => (
-              <div key={page.id} className="p-0 ">
-                <div className="relative mb-0">
-                  <div className=""></div>
-                  <img
-                    src={page.imgSrc}
-                    alt={page.title}
-                    className="w-full h-40 object-cover "
-                  />
-                </div>
-                <h3 className="text-white text-center my-3 bg-gray-700">
-                  {page.title}
-                </h3>
-              </div>
-            ))): <div></div>}
-          </div>
-        </div>
-      </div>
       <div className="max-w-screen-lg py-4 mx-auto">
         <div className="mb-8 flex justify-between mx-5">
           <h2 className="text-2xl font-semibold">Your Pages</h2>
           <button
-            className="flex items-center py-2 px-6 bg-green-600 text-white rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-300 ease-in-out"
+            aria-label="btn"
+            className="flex items-center py-2 px-6 bg-green-700 text-white rounded-md hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition duration-300 ease-in-out"
             onClick={() => setIsModalOpen(true)}
           >
             <span className="text-2xl mr-2">+</span>
             New Page
           </button>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-4 mx-5">
+        <div className="grid grid-cols-1 sm:grid-cols-6 gap-4 mx-5">
           {filteredPages && filteredPages.length > 0 ? (
             filteredPages.map((page) => (
-              <div key={page.id} className="p-0 ">
+              <div key={page._id} className="p-0">
                 <Link to={`/editor/${page._id}`}>
-                  <div className="relative mb-0">
-                    <div className=""></div>
-                    <video
-                      preload="auto"
-                      playsInline
-                      loop
-                      muted
-                      autoPlay
-                      src="https://videos.pexels.com/video-files/856885/856885-hd_1920_1080_30fps.mp4"
-                      alt={page.name}
-                      className="w-full h-40 object-cover "
-                    />
+                  <div className="relative mb-0 mx-auto flex items-center justify-center">
+                    <div
+                      className="w-full h-32 rounded-xl flex items-center"
+                      style={{ background: generateRandomGradient() }}
+                    >
+                      <h3 className="text-white text-center w-full bg-gray-900">
+                        {page.name}
+                      </h3>
+                    </div>
                   </div>
                 </Link>
-
-                <div className="flex justify-between">
-                  <Link to={`/editor/${page._id}`}>
-                    <h3 className="text-white text-center my-3 bg-gray-900">
-                      {page.name}
-                    </h3>
-                  </Link>
+                <div className="flex justify-center">
                   <h3
                     onClick={() => handleDeletePage(page._id)}
                     className="text-red-500 text-center my-3 bg-gray-900 cursor-pointer"
